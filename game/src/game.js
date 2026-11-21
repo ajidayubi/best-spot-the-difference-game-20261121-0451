@@ -132,12 +132,26 @@
 
   function refresh() {
     updateHud();
+    updateStartButton();
     if (game.status === 'title') {
       showTitle();
     } else if (game.status === 'playing') {
       paint();
     } else {
       showEndScreen();
+    }
+  }
+
+  // The main button always says what it will do next: start the game,
+  // move to the next scene, or play again after a win or a time-out.
+  function updateStartButton() {
+    var btn = $('btn-start');
+    if (game.status === 'levelClear') {
+      btn.textContent = 'Next Scene ▶';
+    } else if (game.status === 'win' || game.status === 'gameover') {
+      btn.textContent = '↻ Play Again';
+    } else {
+      btn.textContent = '▶ Start';
     }
   }
 
