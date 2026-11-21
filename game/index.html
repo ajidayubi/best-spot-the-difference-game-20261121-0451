@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Harbour — Spot the Difference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>🏮 Lantern Harbour</h1>
+    <p class="tagline">Spot the Difference — two pictures, seven differences, three scenes</p>
+  </header>
+
+  <div id="hud">
+    <span id="hud-level">Scene 1 of 3 — Harbour Sunset</span>
+    <span id="hud-found">Found 0 / 7</span>
+    <span id="hud-remaining" class="pill">7 remaining</span>
+    <span id="hud-score">Score 0</span>
+    <span id="hud-time">⏱ 90s</span>
+    <span id="hud-mistakes"></span>
+  </div>
+  <div id="time-track"><div id="time-bar"></div></div>
+
+  <main id="panels">
+    <figure class="panel">
+      <canvas id="panel-left" width="600" height="440"></canvas>
+      <figcaption>Picture A — the original</figcaption>
+    </figure>
+    <figure class="panel">
+      <canvas id="panel-right" width="600" height="440"></canvas>
+      <figcaption>Picture B — seven things changed</figcaption>
+    </figure>
+  </main>
+
+  <footer>
+    <div class="controls">
+      <button id="btn-start" type="button">▶ Start</button>
+      <button id="btn-hint" type="button">💡 Hint (−50)</button>
+      <button id="btn-sound" type="button">🔊 Sound on</button>
+      <button id="btn-restart" type="button">↻ Restart</button>
+    </div>
+    <p class="help">Click a difference on either picture. Wrong click −25. Keys: Enter start · H hint · M mute · R restart.</p>
+  </footer>
+</div>
+<script src="src/rng.js"></script>
+<script src="src/scenes.js"></script>
+<script src="src/model.js"></script>
+<script src="src/audio.js"></script>
+<script src="src/render.js"></script>
+<script src="src/game.js"></script>
+</body>
+</html>
